@@ -42,10 +42,10 @@ export default function Home() {
         <div className={styles.center}>
           <Image
             className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
+            src="/speaking.svg"
+            alt="Silhouette of person speaking"
             width={180}
-            height={37}
+            height={180}
             priority
           />
         </div>
