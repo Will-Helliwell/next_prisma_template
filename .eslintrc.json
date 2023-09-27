@@ -33,6 +33,7 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "react/react-in-jsx-scope": "off" // no need to import react in NextJs project, as Next does for you
     }
 }
