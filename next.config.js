@@ -6,6 +6,6 @@ const nextConfig = {
 module.exports = nextConfig;
 module.exports = {
   eslint: {
-    ignoreDuringBuilds: true // otherwise linting errors will fail and stop builds, affecting deployments.
-  }
+    ignoreDuringBuilds: true, // otherwise linting errors will fail and stop builds, affecting deployments.
+  },
 };
