@@ -9,14 +9,5 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
-  const test_variable = 1;
-
-
-
-
-
-
-
-
   res.status(200).json({ nameTest: "John Doe" });
 }
