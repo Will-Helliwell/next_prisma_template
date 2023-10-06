@@ -2,7 +2,76 @@ name: Run Linting
 run-name: ${{ github.actor }} is running linting on a PR
 on: pull_request
 jobs:
-  Run-eslint-prettier:
+  run-eslint-prettier:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      # - name: Get list of modified all files
+      #   id: get-modified-all-files
+      #   run: |
+      #     echo "::set-output name=files::$(git diff --name-only --diff-filter=AM origin/master... | grep -E '\.ts$|\.tsx$|\.js$|\.php$|\.html$|\.css$' | tr '\n' ' ' || echo "")"
+      #   shell: bash
+
+      # - name: Get list of modified js files
+      #   id: get-modified-js-files
+      #   run: |
+      #     echo "::set-output name=files::$(git diff --name-only --diff-filter=AM origin/master... | grep 'php/.*\.js$' | tr '\n' ' ' || echo "")"
+      #   shell: bash
+
+      # - name: Run ESLint Mod JS
+      #   run: |
+      #     files="${{ steps.get-modified-js-files.outputs.files }}"
+      #     IFS=' ' read -r -a fileArray <<< "$files"
+      #     if [[ -n "${files// }" ]]; then
+      #       for file in "${fileArray[@]}"
+      #       do
+      #         npm run eslint-mod "$file"
+      #       done
+      #     fi
+      #   shell: bash
+
+      # - name: Get list of modified ts files
+      #   id: get-modified-ts-files
+      #   run: |
+      #     echo "::set-output name=files::$(git diff --name-only --diff-filter=AM origin/master... | grep -E 'next/pages/api/.*\.(ts|tsx)$' | tr '\n' ' ' || echo "")"
+      #   shell: bash
+
+      # - name: Run ESLint Mod TS
+      #   run: |
+      #     files="${{ steps.get-modified-ts-files.outputs.files }}"
+      #     IFS=' ' read -r -a fileArray <<< "$files"
+      #     if [[ -n "${files// }" ]]; then
+      #       for file in "${fileArray[@]}"
+      #       do
+      #         npm run eslint-mod "$file"
+      #       done
+      #     fi
+      #   shell: bash
+
+      # - name: Run Prettier (if fails - npm run prettier_write)
+      #   run: |
+      #     files="${{ steps.get-modified-all-files.outputs.files }}"
+      #     IFS=' ' read -r -a fileArray <<< "$files"
+      #     if [[ -n "${files// }" ]]; then
+      #       for file in "${fileArray[@]}"
+      #       do
+      #         npm run prettier "$file"
+      #       done
+      #     fi
+      #   shell: bash
