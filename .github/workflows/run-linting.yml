@@ -1,5 +1,5 @@
-name: Run Linting (ESLint and Prettier)
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Run Linting
+run-name: ${{ github.actor }} is running linting on a PR
 on: pull_request
 jobs:
   Run-eslint-prettier:
