@@ -1,8 +1,8 @@
 name: Run Linting (ESLint and Prettier)
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [pull_request]
+on: pull_request
 jobs:
-  Run ESLint and Prettier:
+  Run-eslint-prettier:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
