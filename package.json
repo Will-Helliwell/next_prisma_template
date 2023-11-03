@@ -23,6 +23,7 @@
     "typescript": "5.2.2"
   },
   "dependencies": {
+    "@prisma/client": "^5.4.2",
     "next": "^13.4.19"
   }
 }
