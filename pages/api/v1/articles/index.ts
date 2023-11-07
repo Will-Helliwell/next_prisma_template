@@ -1,5 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@project-root/services/db";
+import {
+  getErrorHttpStatusCode,
+  getErrorMessage,
+} from "@project-root/utils/errors";
 
 export default async function handler(
   req: NextApiRequest,
@@ -28,9 +32,9 @@ async function handleGetRequest(
     const articles = await prisma.article.findMany();
     res.status(200).json({ articles });
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "An error occurred while fetching articles." });
+    const httpStatusCode = getErrorHttpStatusCode(error);
+    const errorMessage = getErrorMessage(error);
+    res.status(httpStatusCode).json({ error: errorMessage });
   }
 }
 
