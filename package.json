@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.4.2",
-    "next": "^13.4.19"
+    "eslint-plugin-prettier": "^5.0.1",
+    "next": "^13.4.19",
+    "zod": "^3.22.4"
   }
 }
