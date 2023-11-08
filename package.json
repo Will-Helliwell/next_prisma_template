@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.4.2",
-    "next": "^13.4.19"
+    "next": "^13.4.19",
+    "zod": "^3.22.4"
   }
 }
