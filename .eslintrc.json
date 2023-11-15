@@ -19,6 +19,28 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
-    "react/react-in-jsx-scope": "off" // no need to import react in NextJs project, as Next does for you
+    "react/react-in-jsx-scope": "off", // no need to import react in NextJs project, as Next does for you
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    // "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    // "@typescript-eslint/no-unused-vars-experimental": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-inferrable-types": "error",
+    "@typescript-eslint/no-var-requires": "error",
+    // "@typescript-eslint/strict-boolean-expressions": "error",
+    // "@typescript-eslint/strict-null-checks": "error",
+    // "@typescript-eslint/no-unnecessary-type-assertion": "error",
+    "@typescript-eslint/no-misused-new": "error",
+    "@typescript-eslint/prefer-for-of": "error",
+    // "@typescript-eslint/prefer-includes": "error",
+    "@typescript-eslint/prefer-namespace-keyword": "error",
+    // "@typescript-eslint/prefer-string-starts-ends-with": "error",
+    "@typescript-eslint/prefer-ts-expect-error": "error",
+    // "@typescript-eslint/require-array-sort-compare": "error",
+    // "@typescript-eslint/restrict-plus-operands": "error",
+    "@typescript-eslint/unified-signatures": "error"
   }
 }
