@@ -23,8 +23,6 @@ Features:
 
 Not yet deployed as this is a template. 
 
-## Stack
-
 ## To Clone and Run
 
 1. First clone the repo following Github's instructions.
